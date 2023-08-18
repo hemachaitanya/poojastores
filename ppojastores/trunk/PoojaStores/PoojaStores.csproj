@@ -12,7 +12,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.11" />
     <PackageReference Include="Razorpay" Version="3.0.0" />
     <PackageReference Include="RestSharp" Version="106.13.0" />
-    <RuntimeHostConfigurationOption Include="System.Globalization.Invariant" Value="true" />
   </ItemGroup>
 
   <ItemGroup>
