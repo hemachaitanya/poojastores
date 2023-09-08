@@ -20,6 +20,7 @@ pipeline {
             steps {
                 sh """
                 cd PoojaStores/PoojaStores/
+                export PATH=/home/ubuntu/dotnet:$PATH
                 dotnet build
                 """
             }
