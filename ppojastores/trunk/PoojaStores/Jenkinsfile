@@ -1,0 +1,12 @@
+pipeline {
+    agent { label 'PROJECT' }
+    triggers { pollSCM('* * * * *')}
+    stages {
+        stage('Clone the code') {
+            steps {
+                git branch: 'main',
+                       url: 'https://github.com/maheshryali123/poojastores.git'
+            }    
+        }
+    }
+}
