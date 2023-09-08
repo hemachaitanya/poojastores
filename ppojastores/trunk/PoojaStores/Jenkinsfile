@@ -16,5 +16,13 @@ pipeline {
                 """
             }
         }
+        stage('Build_the_package') {
+            steps {
+                sh """
+                cd PoojaStores/PoojaStores/
+                dotnet build
+                """
+            }
+        }
     }
 }
