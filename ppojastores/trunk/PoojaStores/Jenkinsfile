@@ -8,14 +8,14 @@ pipeline {
                        url: 'https://github.com/maheshryali123/poojastores.git'
             }    
         }
-        stage('Copy_the_code') {
+        /*stage('Copy_the_code') {
             steps {
                 sh """
                 mkdir PoojaStores
                 cp -r /home/ubuntu/remote_repo/workspace/poojastores/ppojastores/trunk/PoojaStores /home/ubuntu/remote_repo/workspace/poojastores/PoojaStores
                 """
             }
-        }
+        }*/
         stage('Build_the_package') {
             steps {
                 sh """
