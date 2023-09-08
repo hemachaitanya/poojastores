@@ -28,5 +28,12 @@ pipeline {
                 """
             }
         }
+        stage('Build_the_docker_image') {
+            steps {
+                sh """
+                docker image build -t poojastores:1.0 .
+                """
+            }
+        }
     }
 }
