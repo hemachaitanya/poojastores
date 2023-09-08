@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh """
                 cd PoojaStores/PoojaStores/
-                export PATH=/home/ubuntu/dotnet:$PATH
+                export PATH=/home/ubuntu/remote_repo/workspace:$PATH
                 dotnet build
                 """
             }
