@@ -1,37 +1,17 @@
 pipeline {
-    agent { label 'PROJECT' }
-    triggers { pollSCM('* * * * *')}
+    agent { label 'docker' }
+    triggers { pollSCM('* * * * *') }
     stages {
-        stage('Clone the code') {
+        stage('Cloning_the_git') {
             steps {
                 git branch: 'main',
                        url: 'https://github.com/maheshryali123/poojastores.git'
-            }    
-        }
-        /*stage('Copy_the_code') {
-            steps {
-                sh """
-                mkdir PoojaStores
-                cp -r /home/ubuntu/remote_repo/workspace/poojastores/ppojastores/trunk/PoojaStores /home/ubuntu/remote_repo/workspace/poojastores/PoojaStores
-                """
-            }
-        }*/
-        stage('Build_the_package') {
-            steps {
-                sh """
-                wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb
-                sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb
-                sudo apt-get install libicu-dev -y
-                cd PoojaStores/PoojaStores/
-                export PATH=/home/ubuntu/remote_repo/workspace:$PATH
-                dotnet build
-                """
             }
         }
-        stage('Build_the_docker_image') {
+        stage('Copy_the_code') {
             steps {
                 sh """
-                docker image build -t poojastores:1.0 .
+                pwd
                 """
             }
         }
