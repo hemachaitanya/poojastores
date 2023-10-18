@@ -21,8 +21,7 @@ pipeline {
         stage('Build_the_code') {
             steps {
                 sh """
-                cd /home/ubuntu/mahesh
-                dotnet build 
+                /home/ubuntu/mahesh/dotnet build 
                 """
             }    
         }
