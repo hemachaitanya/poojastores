@@ -1,6 +1,9 @@
 pipeline {
     agent { label 'docker' }
     triggers { pollSCM('* * * * *') }
+    environment {
+        dotnet ='/home/ubuntu/mahesh/'
+    }
     stages {
         stage('Cloning_the_git') {
             steps {
@@ -19,7 +22,7 @@ pipeline {
             steps {
                 sh """
                 cd /home/ubuntu/mahesh
-                dotnet build
+                dotnet build 
                 """
             }    
         }
