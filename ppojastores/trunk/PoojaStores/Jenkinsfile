@@ -18,7 +18,7 @@ pipeline {
         stage('Build_the_code') {
             steps {
                 sh """
-                /home/ubuntu/mahesh/dotnet build /home/ubuntu/mahesh/PoojaStores.csproj
+                /home/ubuntu/dotnet build /home/ubuntu/mahesh/PoojaStores.csproj
                 """
             }    
         }
