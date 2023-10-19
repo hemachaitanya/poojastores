@@ -20,15 +20,19 @@ pipeline {
             steps {
                 sh """
                 docker image build -t poojastoresnew:1.0 .
-                docker image tag poojastoresnew:1.0 626867783879.dkr.ecr.us-east-1.amazonaws.com/poojastore:BUILD_NUMBER
-                docker image push 626867783879.dkr.ecr.us-east-1.amazonaws.com/poojastore:BUILD_NUMBER
+                docker image tag poojastoresnew:1.0 626867783879.dkr.ecr.us-east-1.amazonaws.com/poojastore:${BUILD_NUMBER}
+                docker image push 626867783879.dkr.ecr.us-east-1.amazonaws.com/poojastore:${BUILD_NUMBER}
                 """
             }
         }
         stage('Deploy_application_to_k8s') {
             agent { label 'k8s'}
             steps {
-                sh '/usr/bin/kubectl get pods'
+                sh """
+                /usr/bin/kubectl apply -f namespace.yaml
+                /usr/bin/kubectl apply -f deployment.yaml
+                /usr/bin/kubectl apply -f service.yaml
+                """
             }
         }
     }

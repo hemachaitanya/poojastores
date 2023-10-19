@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poojastore
+  namespace: dev-deployment
+spec:
+  minReadySeconds: 3
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  selector: 
+    matchLabels:
+      app: poojastore
+      version: "v1.0"
+  template:
+    metadata:
+      name: poojastore
+      labels:
+        app: poojastore
+        version: "v1.0"
+    spec:
+      containers:
+        - name: poojastore
+          image: 626867783879.dkr.ecr.us-east-1.amazonaws.com/poojastore:latest
+          ports:
+            - containerPort: 5000
+              protocol: TCP        
