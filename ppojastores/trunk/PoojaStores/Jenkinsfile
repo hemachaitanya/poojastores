@@ -26,5 +26,11 @@ pipeline {
                 """
             }
         }
+        stage('Deploy_application_to_k8s') {
+            agent { label 'k8s'}
+            steps {
+                sh '/usr/bin/kubectl get pods'
+            }
+        }
     }
 }
