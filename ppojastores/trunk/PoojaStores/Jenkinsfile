@@ -22,7 +22,6 @@ pipeline {
                 docker image build -t poojastoresnew:1.0 .
                 docker image tag poojastoresnew:1.0 maheshryali/poojastoresnew:1.0
                 docker image push maheshryali/poojastoresnew:1.0
-                kubectl get pods
                 """
             }
         }
