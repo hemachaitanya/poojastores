@@ -30,9 +30,9 @@ pipeline {
             steps {
                 sh """
                 pwd
-                /usr/bin/kubectl apply -f namespace.yaml
-                /usr/bin/kubectl apply -f deployment.yaml
-                /usr/bin/kubectl apply -f service.yaml
+                /usr/bin/kubectl apply -f ./ppojastores/trunk/PoojaStores/namespace.yaml
+                /usr/bin/kubectl apply -f ./ppojastores/trunk/PoojaStores/deployment.yaml
+                /usr/bin/kubectl apply -f ./ppojastores/trunk/PoojaStores/service.yaml
                 """
             }
         }
