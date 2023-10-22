@@ -29,7 +29,7 @@ pipeline {
             steps{
                 script {
                     image_scanning_report=$("trivy image 626867783879.dkr.ecr.us-east-1.amazonaws.com/poojastore:${BUILD_NUMBER}")
-                    time_stamp=$("date +"%Y-%m-%d-%H-%M"")
+                    time_stamp=$(date +"%Y-%m-%d-%H-%M")
                     echo "${time_stamp}-${image_scanning_report}" >> "/home/ubuntu/image_scanning_report.csv"
                 }
             }
