@@ -28,7 +28,7 @@ pipeline {
         stage('scan_the_docker_image') {
             steps{
                 sh """
-                    trivy image 626867783879.dkr.ecr.us-east-1.amazonaws.com/poojastore:${BUILD_NUMBER}
+                    trivy image 626867783879.dkr.ecr.us-east-1.amazonaws.com/poojastore:${BUILD_NUMBER} >> /home/ubuntu/image_scanning_report.csv
                 """
             }
         }
