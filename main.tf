@@ -11,7 +11,6 @@ resource "aws_vpc" "vpc1" {
 resource "aws_subnet" "sub" {  
     vpc_id = aws_vpc.vpc1.name
     count = 3
-    name = mysub$(count.index)
     cidr_block =  cidrsubnet("190.19.0.0/16",8,count.index)
     tags = {
       Name = "mysub$(count.index)"
