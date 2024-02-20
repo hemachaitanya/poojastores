@@ -1,5 +1,6 @@
 provider "aws" {
     region = "us-east-1"
+    alias  = "env"
   
 }
 resource "aws_dynamodb_table" "backend-purpose" {
