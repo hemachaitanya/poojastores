@@ -16,7 +16,7 @@ terraform {
     bucket = "eshubabool143"
     key = "terraform.tfstate"
     region = "us-east-1" 
-    encript = "true"   
+    encript = true   
     dynamodb_table = "aws_dynamodb_table.backend-purpose.name"
   }
 }
