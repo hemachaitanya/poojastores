@@ -3,7 +3,6 @@ provider "aws" {
 }
 resource "aws_vpc" "vpc1" {
     cidr_block = "190.19.0.0/16"
-    name = "vpc1"
     tags = {
       "Name" = "vpc1"
     }  
