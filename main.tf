@@ -8,7 +8,7 @@ resource "aws_vpc" "vpc1" {
     }  
 }
 resource "aws_subnet" "sub" {  
-    vpc_id = aws_vpc.vpc1.name
+    vpc_id = aws_vpc.vpc1.id
     count = 3
     cidr_block =  cidrsubnet("190.19.0.0/16",8,count.index)
     tags = {
